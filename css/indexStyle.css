@@ -1,12 +1,12 @@
 :root {
     --body-background-color: #ffffff;
-    --main-color: #6F38C5;
+    --main-color: #7e4ecc;
     --main-font-color: white;
     --footer-background-color: rgb(235, 235, 235);
     --banner-font-color: white;
     --card-background-color: #87A2FB;
-    --part-title-font-color: #5926ac;
-    --project-background-color: #6F38C5;
+    --part-title-font-color: #6938b7;
+    --project-background-color: #7a49ca;
     --link-color: rgb(70, 70, 70);
     /* ====== */
     --card-padding: 22px;
@@ -40,8 +40,8 @@ h6 {
     height: 200px;
     padding: 20px;
     font-size: 26px;
-    background-color: black;
-    background-image: url('https://pic1.imgdb.cn/item/63396bdb16f2c2beb1179f5c.jpg');
+    background-color: var(--main-color);
+    background-image: url('https://pic1.imgdb.cn/item/633aa43016f2c2beb1e8d4df.jpg');
     background-position: center;
     background-size: cover;
     color: var(--banner-font-color);
@@ -60,6 +60,52 @@ h6 {
 .part-title {
     color: var(--part-title-font-color);
     font-size: 22px;
+}
+
+/* ====== */
+.focus-canvas {
+    width: 100%;
+    background-image: linear-gradient(-45deg,
+            #87A2FB,
+            #7a46cf);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.focus-text,
+.focus-logo {
+    width: 50%;
+    padding: 30px;
+}
+
+.focus-title {
+    font-size: 38px;
+}
+
+.focus-summary {
+    font-size: 26px;
+}
+
+@media screen and (max-width: 500px) {
+    .focus-canvas {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .focus-text,
+    .focus-logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .focus-title {
+        font-size: 26px;
+    }
+
+    .focus-summary {
+        font-size: 18px;
+    }
 }
 
 /* ====== */
@@ -185,7 +231,7 @@ h6 {
     opacity: 0;
 }
 
-.project-item-img:hover{
+.project-item-img:hover {
     opacity: .2;
 }
 
