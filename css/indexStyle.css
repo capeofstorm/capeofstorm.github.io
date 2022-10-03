@@ -1,4 +1,5 @@
 :root {
+    --body-background-color: #ffffff;
     --main-color: #6F38C5;
     --main-font-color: white;
     --footer-background-color: rgb(235, 235, 235);
@@ -20,6 +21,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--main-font-color);
+    background-color: var(--body-background-color);
 }
 
 h1,
@@ -50,7 +52,7 @@ h6 {
     padding: 20px;
 }
 
-.part{
+.part {
     margin-top: 10px;
     margin-bottom: 60px;
 }
@@ -120,7 +122,7 @@ h6 {
     font-size: 18px;
 }
 
-.member-item-link{
+.member-item-link {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -129,10 +131,12 @@ h6 {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.364);
 }
-.member-item-link:hover{
+
+.member-item-link:hover {
     background-color: rgba(255, 255, 255, 0.544);
 }
-.member-item-link>img{
+
+.member-item-link>img {
     margin: 5px;
 }
 
@@ -154,24 +158,24 @@ h6 {
     }
 }
 
-@media screen and (min-width: 1080px){
+@media screen and (min-width: 1080px) {
     .project-list {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-.project-item{
+.project-item {
     position: relative;
     color: var(--main-font-color);
     padding: var(--card-padding);
     background-color: var(--project-background-color);
 }
 
-.project-item-name{
+.project-item-name {
     font-size: 18px;
 }
 
-.project-item-img{
+.project-item-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -180,20 +184,22 @@ h6 {
     overflow: hidden;
 }
 
-.project-item-img>img{
+.project-item-img>img {
     transition: 0.3s;
-    filter:opacity(0)
+    filter: opacity(0)
 }
-.project-item:hover img{
-    filter:opacity(0.2)
+
+.project-item:hover img {
+    filter: opacity(0.2)
 }
 
 /* ====== */
-.footer{
+.footer {
     min-height: 400px;
     background-color: var(--footer-background-color);
     display: grid;
     grid-gap: 18px;
+    padding-top: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -208,31 +214,31 @@ h6 {
     }
 }
 
-@media screen and (min-width: 1080px){
+@media screen and (min-width: 1080px) {
     .footer {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-.footer-column{
+.footer-column {
     padding: var(--card-padding);
 }
 
-.logo{
+.logo {
     font-size: 38px;
-    color: black;
     text-align: center;
 }
 
-.footer-column-title{
+.footer-column-title {
     color: var(--link-color);
 }
 
-.footer-cloumn-link{
+.footer-cloumn-link {
     display: block;
     margin: 10px 0;
     color: var(--link-color);
 }
-.footer-cloumn-link:hover{
+
+.footer-cloumn-link:hover {
     text-decoration: underline;
 }
