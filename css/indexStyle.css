@@ -182,16 +182,20 @@ h6 {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    opacity: 0;
 }
 
-.project-item-img>img {
+.project-item-img:hover{
+    opacity: .2;
+}
+
+/* .project-item-img>img {
     transition: 0.3s;
     filter: opacity(0)
 }
-
 .project-item:hover img {
     filter: opacity(0.2)
-}
+} */
 
 /* ====== */
 .footer {
