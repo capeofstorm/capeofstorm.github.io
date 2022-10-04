@@ -36,89 +36,42 @@
             </div>
         </div>
 
-        <div class="part">
+        <div class="part" id="project">
             <h3 class="part-title">所有项目 | PROJECT</h3>
             <div class="project">
                 <br>
                 <div class="project-list">
-
-                    <a href="#">
+                    <a v-for="item in project" :href="item.url">
                         <div class="project-item">
                             <div class="project-item-img">
-                                <img width="100%" src="https://pic1.imgdb.cn/item/61975a452ab3f51d91d3352f.jpg" alt="Preview">
+                                <img style="width: 100%" :src="item.imgUrl" alt="Preview">
                             </div>
-                            <h4 class="project-item-name">未公开</h4>
+                            <h4 class="project-item-name">{{item.name}}</h4>
                             <br>
-                            <p class="project-item-summary">敬请期待...</p>
+                            <p class="project-item-summary">{{item.summary}}</p>
                         </div>
                     </a>
-
                 </div>
             </div>
         </div>
 
-        <div class="part">
+        <div class="part" id="developer">
             <h3 class="part-title">开发者 | DEVELOPER</h3>
             <div class="member">
                 <br>
                 <div class="member-list">
-
-                    <!-- 影歌Shadowsong -->
-                    <div class="member-item">
-                        <a class="member-item-link" target="_blank" href="https://github.com/zhangao204">
+                    <div class="member-item" v-for="item in developers">
+                        <a class="member-item-link" target="_blank" :href="item.url">
                             <img height="30" src="./public/icon/detail.png" alt="Detail">
                         </a>
                         <br>
                         <div class="member-item-avatar">
-                            <img width="100%" src="https://avatars.githubusercontent.com/u/109642163?v=4" alt="avatar">
+                            <img style="width: 100%" :src="item.avatar" alt="avatar">
                         </div>
                         <br>
-                        <h4 class="member-item-username"><i>影歌Shadowsong</i></h4>
-                        <p class="member-item-summary">Node.js开发(express.js，koa.js，NestJS)</p>
+                        <h4 class="member-item-username"><i>{{item.username}}</i></h4>
+                        <p class="member-item-summary">{{item.bio}}</p>
                     </div>
-
-                    <!-- 临江仙 -->
-                    <div class="member-item">
-                        <a class="member-item-link" target="_blank" href="https://github.com/wanghaoyi1999">
-                            <img height="30" src="./public/icon/detail.png" alt="Detail">
-                        </a>
-                        <br>
-                        <div class="member-item-avatar">
-                            <img width="100%" src="https://avatars.githubusercontent.com/u/67174942?v=4" alt="avatar">
-                        </div>
-                        <br>
-                        <h4 class="member-item-username"><i>临江仙</i></h4>
-                        <p class="member-item-summary">这个人很神秘</p>
-                    </div>
-
-                    <!-- haiwinds -->
-                    <div class="member-item">
-                        <a class="member-item-link" target="_blank" href="https://github.com/haiwinds">
-                            <img height="30" src="./public/icon/detail.png" alt="Detail">
-                        </a>
-                        <br>
-                        <div class="member-item-avatar">
-                            <img width="100%" src="https://avatars.githubusercontent.com/u/97596376?v=4" alt="avatar">
-                        </div>
-                        <br>
-                        <h4 class="member-item-username"><i>haiwinds</i></h4>
-                        <p class="member-item-summary">漫不经心</p>
-                    </div>
-
-                    <!-- 劝君莫忆 -->
-                    <div class="member-item">
-                        <a class="member-item-link" target="_blank" href="https://github.com/xuehaowei">
-                            <img height="30" src="./public/icon/detail.png" alt="Detail">
-                        </a>
-                        <br>
-                        <div class="member-item-avatar">
-                            <img width="100%" src="https://avatars.githubusercontent.com/u/112641440?v=4" alt="avatar">
-                        </div>
-                        <br>
-                        <h4 class="member-item-username"><i>劝君莫忆</i></h4>
-                        <p class="member-item-summary">这个人很神秘</p>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -137,28 +90,59 @@
             </div>
         </div>
         <div class="footer-column">
+            <h4 class="footer-column-title">官方主页</h4>
+            <div class="footer-cloumn-list">
+                <a href="https://github.com/capeofstorm" class="footer-cloumn-link" target="_blank">
+                    GitHub
+                </a>
+                <a href="#" class="footer-cloumn-link" target="_blank">
+                    Twitter
+                </a>
+            </div>
+        </div>
+        <div class="footer-column">
             <h4 class="footer-column-title">合作组织</h4>
             <div class="footer-cloumn-list">
-                <a href="#" class="footer-cloumn-link">
+                <a href="#" class="footer-cloumn-link" target="_blank">
                     金发双马尾保护协会
                 </a>
-                <a href="#" class="footer-cloumn-link">
+                <a href="#" class="footer-cloumn-link" target="_blank">
                     烈酒风暴Stoutstorm
                 </a>
             </div>
         </div>
         <div class="footer-column">
-            <h4 class="footer-column-title">致谢</h4>
-            <a href="#" class="footer-cloumn-link">
-                
-            </a>
-        </div>
-        <div class="footer-column">
             <h4 class="footer-column-title">友情链接</h4>
-            <a href="#" class="footer-cloumn-link">
+            <a href="#" class="footer-cloumn-link" target="_blank">
                 
             </a> 
         </div>
     </div>
+
+    <script type="module">
+        import { createApp, reactive } from './js/vue/vue.esm@3.2.40-browser.js'
+        import developersStore from './js/store/developer.js'
+        import projectStore from './js/store/project.js'
+        
+        createApp({
+            setup(){
+                let developers =  reactive([])
+                developers = developersStore
+                return {
+                    developers
+                }
+            }
+        }).mount('#developer')
+
+        createApp({
+            setup(){
+                let project =  reactive([])
+                project = projectStore
+                return {
+                    project
+                }
+            }
+        }).mount('#project')
+    </script>
 </body>
 </html>

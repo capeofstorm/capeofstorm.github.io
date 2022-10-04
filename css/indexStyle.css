@@ -34,16 +34,9 @@ h6 {
 }
 
 .banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 200px;
     padding: 20px;
     font-size: 26px;
     background-color: var(--main-color);
-    background-image: url('https://pic1.imgdb.cn/item/633aa43016f2c2beb1e8d4df.jpg');
-    background-position: center;
-    background-size: cover;
     color: var(--banner-font-color);
 }
 
@@ -234,14 +227,6 @@ h6 {
 .project-item-img:hover {
     opacity: .2;
 }
-
-/* .project-item-img>img {
-    transition: 0.3s;
-    filter: opacity(0)
-}
-.project-item:hover img {
-    filter: opacity(0.2)
-} */
 
 /* ====== */
 .footer {
