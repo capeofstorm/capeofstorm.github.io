@@ -35,9 +35,8 @@ h6 {
 
 .banner {
     padding: 20px;
-    font-size: 26px;
-    background-color: var(--main-color);
-    color: var(--banner-font-color);
+    font-size: 36px;
+    color: var(--main-color);
 }
 
 /* ====== */
